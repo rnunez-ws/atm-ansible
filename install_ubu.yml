@@ -1,0 +1,15 @@
+---
+- name: Install Package
+  hosts: all
+  vars: 
+    package: from_playbook
+    
+  #roles:
+  # - ansible-role-listvars
+
+  tasks:
+  
+  - name: Install package
+    apt:
+      name={{ package }}
+      state=present
